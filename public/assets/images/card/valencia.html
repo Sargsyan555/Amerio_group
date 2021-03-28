@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <title>Valencia - Amor El</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="yandex-verification" content="1d4a34ad6e2ae48e" />
+
+    <link rel="apple-touch-icon" sizes="180x180" href="https://amor-el.com/themes/amorel/assets/img/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="https://amor-el.com/themes/amorel/assets/img/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://amor-el.com/themes/amorel/assets/img/favicon/favicon-16x16.png">
+    <link rel="manifest" href="https://amor-el.com/themes/amorel/assets/img/favicon/site.webmanifest">
+    <link rel="mask-icon" href="https://amor-el.com/themes/amorel/assets/img/favicon/safari-pinned-tab.svg" color="#000000">
+    <meta name="apple-mobile-web-app-title" content="Amor El">
+    <meta name="application-name" content="Amor El">
+    <meta name="msapplication-TileColor" content="#000000">
+    <meta name="theme-color" content="#000000">
+
+    <link rel="stylesheet" href="https://amor-el.com/themes/amorel/assets/css/main.min.css">
+    
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.7.0/dist/alpine.min.js" defer></script>
+</head><body :class="{ 'is-fixed' : fixed }">
+<header x-data="{ menu: false, search: false }" class="header">
+    <div class="container-fluid">
+        <div class="row align-items-center">
+            <div class="col-auto col-xl">
+                <a href="/" class="logotype">
+                    <img src="https://amor-el.com/themes/amorel/assets/img/logotype.svg" alt="Логотип">
+                </a>
+            </div>
+            <div class="col d-none d-lg-block">
+                                    <nav class="header__nav">
+                        <ul>
+                                                            <li class="is-dropdown">
+                                    <a href="https://amor-el.com/catalog/ketsyut" role="presentation" class="  " >
+                                        Каталог
+                                    </a>
+                                                                            <ul>
+                                                                                            <li>
+                                                    <a href="https://amor-el.com/catalog/ketsyut" role="presentation" class="  " >
+                                                        Кэтсьюты
+                                                    </a>
+                                                </li>
+                                                                                            <li>
+                                                    <a href="https://amor-el.com/catalog/bodi-i-platya" role="presentation" class="  " >
+                                                        Боди и Платья
+                                                    </a>
+                                                </li>
+                                                                                            <li>
+                                                    <a href="https://amor-el.com/catalog/kolgotki-i-chluki" role="presentation" class="  " >
+                                                        Колготки и Чулки
+                                                    </a>
+                                                </li>
+                                                                                    </ul>
+                                                                    </li>
+                                                            <li>
+                                    <a href="https://amor-el.com/where-buy" role="presentation" class="  " >
+                                        Где купить
+                                    </a>
+                                                                    </li>
+                                                            <li>
+                                    <a href="https://amor-el.com/contacts" role="presentation" class="  " >
+                                        Контакты
+                                    </a>
+                                                                    </li>
+                                                    </ul>
+                    </nav>
+                            </div>
+            <div class="col">
+                <div class="header__menu">
+                    <a href="https://amor-el.com/cart" class="btn header__cart">
+                        
+<svg class="icon">
+    <use xlink:href="https://amor-el.com/themes/amorel/assets/sprite.svg#cart"></use>
+</svg>
+                    </a>
+                    <button class="btn" @click="search = true; document.querySelector('body').classList.add('is-fixed'); setTimeout(()=>{ document.querySelector('._shopaholic-search-input').focus() }, 100)">
+                        <svg class="icon">
+                            <use xlink:href="https://amor-el.com/themes/amorel/assets/sprite.svg#search"></use>
+                        </svg>
+                    </button>
+                    <button class="btn d-lg-none" @click="menu = true; document.querySelector('body').classList.add('is-fixed')">
+                        <svg class="icon">
+                            <use xlink:href="https://amor-el.com/themes/amorel/assets/sprite.svg#menu"></use>
+                        </svg>
+                    </button>
+                                                                        <a href="tel:7-495-2604271" class="d-none d-lg-inline">+7 495 2604271</a>
+                                                            </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu" :class="{ 'is-open' : menu }" @click.away="menu = false; document.querySelector('body').classList.remove('is-fixed')" role="dialog" aria-modal="true">
+        <button class="btn menu__close">
+            <svg class="icon">
+                <use xlink:href="https://amor-el.com/themes/amorel/assets/sprite.svg#close"></use>
+            </svg>
+        </button>
+        <div class="menu__sidebar">
+                            <nav>
+                    <ul>
+                                                    <div x-data="{ open_: false }">
+                                <li class="is-dropdown" :class="{ 'is-open' : open_ }" @click="open_ = true">
+                                    <a href="https://amor-el.com/catalog/ketsyut" role="presentation" class="  " >
+                                        Каталог
+                                    </a>
+                                                                            <ul @click.away="open_ = false">
+                                                                                            <li>
+                                                    <a href="https://amor-el.com/catalog/ketsyut" role="presentation" class="  " >
+                                                        Кэтсьюты
+                                                    </a>
+                                                </li>
+                                                                                            <li>
+                                                    <a href="https://amor-el.com/catalog/bodi-i-platya" role="presentation" class="  " >
+                                                        Боди и Платья
+                                                    </a>
+                                                </li>
+                                                                                            <li>
+                                                    <a href="https://amor-el.com/catalog/kolgotki-i-chluki" role="presentation" class="  " >
+                                                        Колготки и Чулки
+                                                    </a>
+                                                </li>
+                                                                                    </ul>
+                                                                    </li>
+                            </div>
+                                                    <div>
+                                <li>
+                                    <a href="https://amor-el.com/where-buy" role="presentation" class="  " >
+                                        Где купить
+                                    </a>
+                                                                    </li>
+                            </div>
+                                                    <div>
+                                <li>
+                                    <a href="https://amor-el.com/contacts" role="presentation" class="  " >
+                                        Контакты
+                                    </a>
+                                                                    </li>
+                            </div>
+                                            </ul>
+                </nav>
+                        <div class="menu__phone">
+                                    <a href="tel:7-495-2604271">+7 495 2604271</a>
+                            </div>
+        </div>
+    </div>
+    <div class="search" :class="{ 'is-open' : search }" role="dialog" aria-modal="true">
+    <button class="btn search__close">
+        <svg class="icon">
+            <use xlink:href="https://amor-el.com/themes/amorel/assets/sprite.svg#close"></use>
+        </svg>
+    </button>
+    <div class="container" @click.away="search = false; document.querySelector('body').classList.remove('is-fixed')">
+        <div class="row justify-content-lg-center flex-shrink-0">
+            <div class="col-sm-8 col-lg-6">
+                <input class="_shopaholic-search-input" name="search-input" type="text" value="" placeholder="Поиск...">
+            </div>
+        </div>
+        <div class="search__products mt-4 mt-sm-5 search-result-wrapper">
+            
+        </div>
+    </div>
+</div></header>
+
+<main class="product-page _shopaholic-product-wrapper" data-product-id="12">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm product-page__gallery">
+                <div>
+                                                                                                        <img src="https://amor-el.com/storage/app/uploads/public/5fb/264/ab1/5fb264ab1646f035396453.jpg" alt="">
+                                                            <img src="https://amor-el.com/storage/app/uploads/public/5fb/264/ab0/5fb264ab0cbed340518651.jpg" alt="">
+                                                                                        </div>
+            </div>
+            <div class="col">
+            	<div class="product-page__sticky">
+	                <div class="product-page__block">
+	                    <div class="row justify-content-sm-end justify-content-xl-center">
+	                        <div class="col-sm-11 col-lg-10 col-xl-8">
+	                            <div class="breadcrumbs">
+	                                <a href="/">Главная</a>
+	                                <a href="https://amor-el.com/catalog">Каталог</a>
+	                                <span>Кэтсьюты</span>
+	                            </div>
+	                            <h1 class="product-page__title">Valencia</h1>
+	                            <span>Артикул: AME010BLK</span>	                            <p>Valencia - боди-комбинезон на бретельках и с доступом. Благодаря использованию большего количества нейлона, белье сохраняет очертания, не деформируется, растягивается и выгодно облегает фигуру. А за счет эластана, даже после сильного растяжения, оно не деформируется и всегда принимает исходную форму.
+	<br>Материал: 94% нейлон, 6% спандекс</p>
+	
+	                            <div class="product-page__attributes">
+	                                	                                    <div>
+	                                        <h4 class="h4">Цвет:</h4>
+	                                        <div class="d-flex">
+	                                            	                                                <div class="radio radio--type-color">
+	                                                    <input id="color" type="radio" name="color" checked>
+	                                                    <label for="color" style="background-color: #0e0d0d;"></label>
+	                                                </div>
+	                                            	                                        </div>
+	                                    </div>
+	                                	                                	                                    <div>
+	                                        <h4 class="h4">Размер:</h4>
+	                                        <div class="d-flex">
+	                                            	
+	                                            	                                                	                                                	                                                <div class="radio">
+	                                                    <input id="size-4" type="radio" name="offer_id" value="4" checked >
+	                                                    <label for="size-4">S-L</label>
+	                                                </div>
+	                                                	                                                    	                                                	                                            	                                        </div>
+	                                    </div>
+	                                	                            </div>
+	                            	                                <div class="product-page__price">
+	                                    <h4 class="h4">Цена:</h4>
+	                                    <span itemprop="price">1399</span><span itemprop="priceCurrency" content="RUB">₽</span>
+	                                </div>
+	                            	                            <div class="product-page__action justify-content-between">
+	                                	                                    <button class="btn btn--style-primary _shopaholic-cart-add" type="button">В корзину</button>
+	                                	                                <a href="https://amor-el.com/catalog/ketsyut">Назад в каталог</a>
+	                            </div>
+	                        </div>
+	                    </div>
+	                </div>
+	
+	                	                    <div class="product-page__video">
+							<video class="youtube-video video" controls="loop">
+								<source src="https://amor-el.com/storage/app/uploads/public/5fd/b5b/72e/5fdb5b72e6aea677117909.mp4" type="video/mp4" />
+							</video>
+	                    </div>
+	                	
+	                	                    <div class="product-page__block">
+	                        <div class="row justify-content-sm-end justify-content-xl-center">
+	                            <div class="col-sm-11 col-lg-10 col-xl-8">
+	                                <h2 class="h3">Отзывы</h2>
+	                                <div class="reviews">
+	                                    	                                        <div class="reviews__item">
+	                                            <div class="reviews__rating">
+	                                                	                                                    <svg class="icon is-active">
+	                                                        <use xlink:href="https://amor-el.com/themes/amorel/assets/sprite.svg#heart"></use>
+	                                                    </svg>
+	                                                	                                                    <svg class="icon is-active">
+	                                                        <use xlink:href="https://amor-el.com/themes/amorel/assets/sprite.svg#heart"></use>
+	                                                    </svg>
+	                                                	                                                    <svg class="icon is-active">
+	                                                        <use xlink:href="https://amor-el.com/themes/amorel/assets/sprite.svg#heart"></use>
+	                                                    </svg>
+	                                                	                                                    <svg class="icon is-active">
+	                                                        <use xlink:href="https://amor-el.com/themes/amorel/assets/sprite.svg#heart"></use>
+	                                                    </svg>
+	                                                	                                                    <svg class="icon is-active">
+	                                                        <use xlink:href="https://amor-el.com/themes/amorel/assets/sprite.svg#heart"></use>
+	                                                    </svg>
+	                                                	                                            </div>
+	                                            <p>Испанский бренд, испанские имена, а один назвали в честь Города в Испании. А где Барселона и Мадрид?ха ха</p>
+	                                            <div class="h4 reviews__title">Виктор</div>
+	                                        </div>
+	                                    	                                </div>
+	                            </div>
+	                        </div>
+	                    </div>
+	                	            </div>
+            </div>
+        </div>
+    </div>
+</main><section class="advantages">
+    <div class="container">
+        <div class="row justify-content-center">
+                        <div class="col-sm-8 col-md advantages__item">
+                <div>
+                    <img class="icon" src="/storage/app/media/gift.svg" alt="Иконка">
+                    <div>
+                        <h3 class="h3">Упаковка</h3>
+                        <p>БЕСПЛАТНАЯ ПОДАРОЧНАЯ УПАКОВКА</p>
+                    </div>
+                </div>
+            </div>
+                        <div class="col-sm-8 col-md advantages__item">
+                <div>
+                    <img class="icon" src="/storage/app/media/like.svg" alt="Иконка">
+                    <div>
+                        <h3 class="h3">Выбор покупателей </h3>
+                        <p>По опросам покупателей 99% - выбирают нас </p>
+                    </div>
+                </div>
+            </div>
+                        <div class="col-sm-8 col-md advantages__item">
+                <div>
+                    <img class="icon" src="/storage/app/media/check.svg" alt="Иконка">
+                    <div>
+                        <h3 class="h3">Доставка </h3>
+                        <p>Доступна доставка по всей России и странам СНГ.Так же доступна Экспресс-доставка.
+</p>
+                    </div>
+                </div>
+            </div>
+                    </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-lg-3 mr-md-auto mb-2 mb-sm-4 mb-md-0">
+                <a href="/" class="logotype">
+                    <img src="https://amor-el.com/themes/amorel/assets/img/logotype.svg" alt="Логотип">
+                </a>
+                            </div>
+            <div class="col-sm col-md-2 mt-3 mt-sm-0">
+                <h4 class="h4">Каталог</h4>
+                <ul>
+                                                                <li><a href="https://amor-el.com/catalog/ketsyut">Кэтсьюты</a></li>
+                                            <li><a href="https://amor-el.com/catalog/bodi-i-platya">Боди и Платья</a></li>
+                                            <li><a href="https://amor-el.com/catalog/kolgotki-i-chluki">Колготки и Чулки</a></li>
+                                    </ul>
+            </div>
+                        <div class="col-sm col-md-2 mt-3 mt-sm-0">
+                <h4 class="h4">Меню</h4>
+                <ul>
+                                        <li>
+                        <a href="https://amor-el.com/contacts" role="presentation"
+                            class="  "
+                            >
+                            Контакты
+                        </a>
+                    </li>
+                                        <li>
+                        <a href="https://amor-el.com/where-buy" role="presentation"
+                            class="  "
+                            >
+                            Где купить
+                        </a>
+                    </li>
+                                        <li>
+                        <a href="/" role="presentation"
+                            class="  "
+                            >
+                            Способ доставки
+                        </a>
+                    </li>
+                                    </ul>
+            </div>
+                                    <div class="col-sm col-md-4 mt-3 mt-sm-0">
+                <ul class="d-flex justify-content-center justify-content-sm-start justify-content-md-end flex-wrap pt-0">
+                                        <li class="my-0 mx-2"><img src="/storage/app/media/1200px-Visa_Electron.png" alt="Payment icon" height="30"></li>
+                                        <li class="my-0 mx-2"><img src="/storage/app/media/1280px-Mastercard-logo.png" alt="Payment icon" height="30"></li>
+                                        <li class="my-0 mx-2"><img src="/storage/app/media/logotip-qiwi-koshelek.png" alt="Payment icon" height="30"></li>
+                                        <li class="my-0 mx-2"><img src="/storage/app/media/paypal_PNG19.png" alt="Payment icon" height="30"></li>
+                                    </ul>
+                <ul class="d-flex justify-content-center justify-content-sm-start justify-content-md-end">
+                                                                                <li class="mx-1"><a href="https://www.instagram.com/amor_el_/?igshid=1fpovyyax038s">
+                            <svg width="18" height="18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M13.033 0H4.966A4.973 4.973 0 000 4.967v8.066A4.973 4.973 0 004.967 18h8.066A4.973 4.973 0 0018 13.033V4.967A4.973 4.973 0 0013.033 0zm3.37 13.033a3.374 3.374 0 01-3.37 3.37H4.967a3.374 3.374 0 01-3.37-3.37V4.967a3.374 3.374 0 013.37-3.37h8.066a3.374 3.374 0 013.37 3.37v8.066z"
+                                    fill="#fff" />
+                                <path
+                                    d="M9 4.362A4.643 4.643 0 004.36 9 4.643 4.643 0 009 13.638 4.643 4.643 0 0013.638 9a4.643 4.643 0 00-4.639-4.638zm0 7.68A3.044 3.044 0 015.957 9 3.044 3.044 0 019 5.96 3.044 3.044 0 0112.04 9 3.044 3.044 0 019 12.041zm4.832-9.034a1.176 1.176 0 00-1.17 1.171c0 .308.125.61.343.828.217.218.52.343.827.343.31 0 .61-.125.829-.343a1.176 1.176 0 000-1.657 1.176 1.176 0 00-.829-.342z"
+                                    fill="#fff" /></svg>
+                        </a></li>
+                                                        </ul>
+            </div>
+                        <div class="col-12 mt-4">Copy. 2021 Amor El</div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+<script src="https://amor-el.com/themes/amorel/assets/js/scripts.min.js"></script>
+<script src="https://amor-el.com/themes/amorel/assets/js/common.js"></script>
+<script src="/modules/system/assets/js/framework.combined-min.js"></script>
+<link rel="stylesheet" property="stylesheet" href="/modules/system/assets/css/framework.extras-min.css">
+</body>
+</html>
