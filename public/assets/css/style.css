@@ -92,8 +92,31 @@ a, button, input { outline: medium none !important; color: #2575fc; }
     font-weight: 400;
 
 }
+.number:focus{
+    outline:none;
+    border-color: #3da6ff;
+    box-shadow: 0 0 0 transparent;
+    -moz-box-shadow: 0 0 0 transparent;
+    -webkit-box-shadow: 0 0 0 transparent;
+    color: #333;
+}
+#errmsg{
+    margin-top:4px;
+    background: #ff5757;
+    color:#fff;
+    padding:4px;
+    display:none;
+    width: 250px;
+}
 /*header fire*/
-
+.fire_top video{
+    border:0;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+}
 .fire_header h3 {
     border-style: none;
     font-family: Roboto, sans-serif;
@@ -491,57 +514,6 @@ a, button, input { outline: medium none !important; color: #2575fc; }
     background-color: #eae1d8;
 
 }
-/*.product_description,.simple-gallery{
-    height: 100%;
-}*/
-/*.product_description,.simple-gallery{
-    height: 1020px;
-}
-@media only screen and (max-width: 1200px) {
-    .product_description,.simple-gallery{
-        height: 960px;
-    }
-}
-@media only screen and (max-width: 1000px) {
-    .product_description,.simple-gallery{
-        height: 1040px;
-    }
-}
-@media only screen and (max-width: 860px) {
-    .product_description,.simple-gallery{
-        height: 1080px;
-    }
-}
-@media only screen and (max-width: 775px) {
-    .product_description,.simple-gallery{
-        height: 1500px;
-    }
-}
-@media only screen and (max-width: 725px) {
-    .product_description,.simple-gallery{
-        height: 1700px;
-    }
-}
-@media only screen and (max-width: 520px) {
-    .product_description,.simple-gallery{
-        height: 1900px;
-    }
-}
-@media only screen and (max-width: 460px) {
-    .product_description,.simple-gallery{
-        height: 2200px;
-    }
-}
-@media only screen and (max-width: 460px) {
-    .product_description,.simple-gallery{
-        height: 2400px;
-    }
-}
-@media only screen and (max-width: 460px) {
-    .product_description,.simple-gallery{
-        height: 200px;
-    }
-}*/
 .close_product_desc i{
     color: black;
     font-size: 25px;
@@ -577,6 +549,11 @@ a, button, input { outline: medium none !important; color: #2575fc; }
     width: 100%;
     margin-top: 35px;
 }
+
+.product table {
+    text-align: center;
+    max-width: 750px;
+}
 .product table thead tr td{
     height: 50px;
     color: #222;
@@ -588,6 +565,7 @@ a, button, input { outline: medium none !important; color: #2575fc; }
 table, thead, tbody, th,tr, td {
     border: 1px solid black;
     font-weight: 700;
+    padding-left: 5px;
 }
 figure.effect-zoe figcaption {
     top: auto;
@@ -698,10 +676,6 @@ background-color: #FF7F00;
 }
 .download a :hover span{
     color: white!important;
-}
-.product table {
-    text-align: center;
-    max-width: 700px;
 }
 /* ------------------------
     Price

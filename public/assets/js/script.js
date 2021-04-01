@@ -1,4 +1,10 @@
 $(document).ready(function() {
+    $.ajaxSetup({
+    headers: {
+        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+    }
+    });
+
     //fixed navbar
     window.onscroll = function () {
         myFunction()
@@ -186,6 +192,106 @@ $(document).ready(function() {
 
     $('div.standard').mouseout(function() {
         unmountZoomImage();
+    });
+    $("#save_price").click(function (e){
+        e.preventDefault();
+        $(".error-text").empty();
+        var email = $("#email_price").val();
+        var tel = $("#tel_price").val();
+        var cname = $("#cname_price").val();
+        var site = $("#site_price").val();
+        var country= $("#country_price").val();
+        var message = $("#text_area_message_price").val();
+        $.ajax({
+            url:"/send_email_for_price",
+            data:{
+                email:email,
+                telephone:tel,
+                company_name:cname,
+                site:site,
+                country:country,
+                message:message
+            },
+            method: "POST",
+            success:function (res){
+                if ($.isEmptyObject(res.error)) {
+                    $('.modal').hide();
+                    $('.modal-backdrop').hide();
+
+                } else {
+                    printErrorMsg(res.error);
+                }
+            }
+        })
+    })
+    $('#send_contact').click(function (e){
+        e.preventDefault();
+        $(".error-text").empty();
+        var first_name = $('#first_name').val();
+        var last_name =$('#last_name').val();
+        var contact_email = $('#contact_email').val();
+        var country_contact = $('#country_contact').val();
+        var contact_message = $('#contact_message').val();
+
+        $.ajax({
+            url:"send_email_contact",
+            data:{
+                first_name:first_name,
+                last_name:last_name,
+                contact_email:contact_email,
+                country_contact:country_contact,
+                contact_message:contact_message,
+
+            },
+            method: "POST",
+            success:function (res){
+                if ($.isEmptyObject(res.error)){
+                   }else {
+                    printErrorMsg(res.error)
+                }
+            }
+        })
+
+    })
+    $('#send_partner').click(function (e){
+        e.preventDefault();
+        $(".error-text").empty();
+        var email = $('#email_partner').val();
+        var tel =$('#tel_partner').val();
+        var cname = $('#cname_partner').val();
+        var site = $('#site_partner').val();
+        var country = $('#country_partner').val();
+        var message = $('#message_partner').val();
+        $.ajax({
+            url: "/send_email_for_partner",
+            data: {
+                email:email,
+                telephone:tel,
+                company_name:cname,
+                site:site,
+                country:country,
+                message:message
+            },
+            method: "POST",
+            success:function (res){
+                if ($.isEmptyObject(res.error)){
+
+                }else {
+                    printErrorMsg(res.error)
+                }
+            }
+        })
+    })
+    function printErrorMsg (msg) {
+        $.each( msg, function( key, value ) {
+            $('.'+key+'_err').text(value);
+        });
+    }
+    $(".number").keypress(function (e) {
+        if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
+            $("#errmsg").html("Number Only").stop().show().fadeOut("slow");
+            return false;
+        }
     });
 
 })

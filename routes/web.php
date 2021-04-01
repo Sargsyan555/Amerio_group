@@ -16,3 +16,6 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [\App\Http\Controllers\PageController::class,'home']);
 Route::post('/', [\App\Http\Controllers\CountriesController::class,'countries']);
 Route::get('/product', [\App\Http\Controllers\PageController::class,'product']);
+Route::post('send_email_for_price',[\App\Http\Controllers\MailController::class,'sendEmailPrice']);
+Route::post('send_email_for_partner',[\App\Http\Controllers\MailController::class,'sendEmailPartner']);
+Route::post('send_email_contact',[\App\Http\Controllers\MailController::class,'sendEmailContact']);

@@ -1,2 +1,2 @@
-User-agent: *
+User-agent: https://dev.ameriogroup.lt/sitemap.xml
 Disallow:

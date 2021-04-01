@@ -1,12 +1,38 @@
+
     <!DOCTYPE html>
 <html lang="en" >
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
     <title>@yield('title')-Amerio Grupė</title>
-    <meta content="" name="description">
     <meta content="" name="keywords">
-    <link rel="icon" type="image/png" sizes="56x56" href="{{asset('assets/images/logo.png')}}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <meta  name="description" content="ceramic crucible,crucible ceramic,Jewelry crucible,hand fusing crucible,crucible for hand fusion,casting  crucible, crucible for casting,ceramic boards for soldering,
+           soldering boards,high quality ceramic crucible,ceramic dish for hand fusing metals, dish for melting metals, melting dishes,high temperature  ceramic crucible,soldering boards round,
+           soldering boards   for jewelers,jewelry soldering boards,ceramic cups  for melting precise metals,high quality ceramic cups,jewelry hand fusing crucible,crucible for jewelry manufacturing,
+           ceramic dishes for melting precise metals,gold melting crucible,silver melting crucible,crucible for copper melting,copper melting dishes,platinum crucible,crucible for platinum melting,
+           high frequency  centrifugal molding,molding crucible, ceramic dishes for molding, Crucible for high frequency foundation installations,precise metals melting cups,
+           precise metals melting ceramic  crucible,precise metal casting,casting  crucible, molding precise metals,precise metals molding dishes,high temperature crucible,">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="lt" name="dc.language">
+    <meta content="Text" name="dc.type">
+    <meta property="og:title" content="Amerio Grupė">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://dev.ameriogroup.lt/">
+    <meta property="og:image" content="{{asset('assets/images/logo.webp')}}">
+    <meta property="og:description" content="We are specializing on out-put of Ceramic fire-proof Crucibles Offering product which manufacture is carried out on its own Exclusive technology.">
+    <meta property="og:site_name" content="Amerio Grupė">
+    <meta property="og:locale" content="lt_LT">
+    <meta name="twitter:title" content="Amerio Grupė">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:url" content="//dev.ameriogroup.lt/">
+    <meta name="twitter:image" content="{{asset('assets/images/logo.webp')}}">
+    <meta name="twitter:description" content="We are specializing on out-put of Ceramic fire-proof Crucibles Offering product which manufacture is carried out on its own Exclusive technology.">
+    <link rel="icon" type="image/webp" sizes="56x56" href="{{asset('assets/images/logo.webp')}}">
     <!--== bootstrap -->
     <link rel="stylesheet" href="{{asset('assets/css/bootstrap.css')}}">
     <!--== default-theme -->
@@ -23,7 +49,7 @@
                     <a href="/">
                         <div class="header_logo ">
                             <div class="text-center">
-                                <img src="{{asset('assets/images/logo.png')}}" width="90"  alt="">
+                                <img src="{{asset('assets/images/logo.webp')}}" width="90"  alt="">
                             </div>
                             <div class="company_name ">
                                 <h3 class="amerio">AMERIO <span>GRUPĖ</span></h3>
@@ -61,7 +87,7 @@
                         </div>
                         <span class="d-sm-block divider d-none px-2"> |</span>
                         <div class=" x text-center ">
-                            <button type="button" class="btn modal_btn py-1" data-toggle="modal" data-target="#exampleModal">
+                            <button type="submit" class="btn modal_btn py-1" data-toggle="modal" data-target="#exampleModal">
                                 Ask for Price List
                             </button>
                         </div>
@@ -80,43 +106,53 @@
                                     </button>
                                 </div>
                                 <div class="modal-body">
-                                    <form action="">
+                                    <form>
                                         <div class="row">
-                                            <div class="col-md-6">
+                                            <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <input type="email" class="form-control "id="email_price" placeholder="Email Address" name="Email" required>
+                                                    <input type="email" class="form-control " id="email_price" placeholder="Email Address" name="email" required>
+                                                    <span class="text-danger error-text email_err"></span>
                                                 </div>
                                             </div>
 
-                                            <div class="col-md-6">
+                                            <div class="col-md-12">
                                                 <div class="form-group">
-                                                    <input type="text" class="form-control " id="tel_price" placeholder="Tel" name="tel" required>
+                                                    <input type="text" class="form-control number" id="tel_price" placeholder="Tel" name="tel" required>
+                                                    <span class="text-danger error-text telephone_err"></span>
+
                                                 </div>
                                             </div>
                                             <div class="col-md-12">
                                                 <div class="form-group">
                                                     <input type="text" class="form-control " id="cname_price" placeholder="Company Name" name="cname" required>
+                                                    <span class="text-danger error-text company_name_err"></span>
+
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="form-group">
                                                     <input type="text" class="form-control " id="site_price" placeholder="Site Url" name="site">
+                                                    <span class="text-danger error-text site_err"></span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12">
                                                 <div class="form-group text-left">
-                                                    <select name="country" id="country_partner" class="form-control ">
+                                                    <select name="country" id="country_price" class="form-control ">
                                                         <option value="" class="disabled-selected" disabled selected>Select Country</option>
                                                         @foreach($countries as $country)
                                                             <option value="{{$country}}">{{$country}}</option>
                                                         @endforeach
                                                     </select>
+                                                    <span class="text-danger error-text country_err"></span>
+
                                                 </div>
                                             </div>
                                             <div class="col-12">
                                                 <div class="form-group text-left">
                                                     <label for="text_area">Message:</label>
-                                                    <textarea name="" id="text_area" class="form-control " rows="3"></textarea>
+                                                    <textarea name="message" id="text_area_message_price" class="form-control " name="text_area" rows="3"></textarea>
+                                                    <span class="text-danger error-text message_err"></span>
+
                                                 </div>
                                             </div>
                                         </div>
@@ -124,7 +160,7 @@
 
                                 </div>
                                 <div class="modal-footer">
-                                    <button type="button" class="btn save_price  btn-block text-uppercase">Send</button>
+                                    <button type="button" id="save_price" class="btn save_price  btn-block text-uppercase">Send</button>
 
                                 </div>
                             </div>
@@ -163,14 +199,14 @@
         </ul>
     </div>
 </nav>
+<body>
 <div class="fire_top ">
     <div class="container-fluid">
         <div class="row">
             <div class="col-12 px-0 ">
                 <div  class="fire" >
-                    <iframe  src="https://player.vimeo.com/video/472568077?autoplay=1&loop=1&title=0&byline=0&portrait=0&muted=1&background=1" style="border:0;position:absolute; top:0;left:0;width:100%;height:100%;" alt="flames fire extinguisher servicing company">
-                        <img src="{{asset('assets/images/logo.png')}}" alt="">
-                    </iframe>
+                    <video src="{{asset('assets/2105169608.mp4')}}" loop muted autoplay>
+                    </video>
                 </div>
                 <div class="fire_header col-12" >
                     <div class="text col-12 pb-3">
@@ -178,11 +214,11 @@
                     </div>
                     <div class="fire_top_images d-flex flex-wrap col-12 justify-content-center">
                         <div class="col-12 d-flex justify-content-center">
-                            <img  class="img-fluid" src="{{asset('assets/images/fire_images/slide_1.png')}}"  alt="">
-                            <img  class="img-fluid" src="{{asset('assets/images/fire_images/slide_2.png')}}"  alt="">
-                            <img  class="img-fluid" src="{{asset('assets/images/fire_images/slide_3.png')}}"  alt="">
-                            <img  class="img-fluid" src="{{asset('assets/images/fire_images/slide_4.png')}}"  alt="">
-                            <img  class="img-fluid" src="{{asset('assets/images/fire_images/slide_5.png')}}"  alt="">
+                            <img  class="img-fluid" src="{{asset('assets/images/fire_images/slide_1.webp')}}"  alt="">
+                            <img  class="img-fluid" src="{{asset('assets/images/fire_images/slide_2.webp')}}"  alt="">
+                            <img  class="img-fluid" src="{{asset('assets/images/fire_images/slide_3.webp')}}"  alt="">
+                            <img  class="img-fluid" src="{{asset('assets/images/fire_images/slide_4.webp')}}"  alt="">
+                            <img  class="img-fluid" src="{{asset('assets/images/fire_images/slide_5.webp')}}"  alt="">
                         </div>
                     </div>
                 </div>
@@ -200,7 +236,7 @@
                     <div class="footer-widget">
                         <div class="footer-logo text-center">
                             <a href="/">
-                                <img src="{{asset('assets/images/logo.png')}}" width="50" class="img-fluid" alt="logo">
+                                <img src="{{asset('assets/images/logo.webp')}}" width="50" class="img-fluid" alt="logo">
                             </a>
                         </div>
                         <div class="footer-text">
@@ -274,11 +310,11 @@
                 <div class="col-lg-8 col-12 text-lg-right text-center">
                     <div class="footer-menu">
                         <ul class="m-auto">
-                            <li class="pt-md-0 pt-2"><a href=""><img src="{{asset('assets/images/card/paypal_PNG13.png')}}" width="70"  alt=""></a></li>
-                            <li class="pt-md-0 pt-2"><a href=""><img src="{{asset('assets/images/card/mastercard_PNG7.png')}}" width="70" alt=""></a></li>
+                            <li class="pt-md-0 pt-2"><a href=""><img src="{{asset('assets/images/card/paypal_PNG13.webp')}}" width="70"  alt=""></a></li>
+                            <li class="pt-md-0 pt-2"><a href=""><img src="{{asset('assets/images/card/mastercard_PNG7.webp')}}" width="70" alt=""></a></li>
                             <li class="pt-md-0 pt-2"><a href=""><img src="{{asset('assets/images/card/seb-bankas.webp')}}" width="70" alt=""></a></li>
-                            <li class="pt-md-0 pt-2"><a href=""><img src="{{asset('assets/images/card/visa_PNG11.png')}}" width="70" alt=""></a></li>
-                            <li class="pt-md-0 pt-2"><a href=""><img src="{{asset('assets/images/card/Paysera_logo.png')}}" width="70" alt=""></a></li>
+                            <li class="pt-md-0 pt-2"><a href=""><img src="{{asset('assets/images/card/visa_PNG11.webp')}}" width="70" alt=""></a></li>
+                            <li class="pt-md-0 pt-2"><a href=""><img src="{{asset('assets/images/card/Paysera_logo.webp')}}" width="70" alt=""></a></li>
 
                         </ul>
                     </div>
@@ -293,7 +329,6 @@
 <script src="{{asset('assets/js/jquery.js')}}"></script>
 <script src="{{asset('assets/js/bootstrap.js')}}"></script>
 <script src="{{asset('assets/js/script.js')}}"></script>
-
 @yield('scripts')
 
 </body>
