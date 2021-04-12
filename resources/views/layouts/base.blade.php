@@ -105,8 +105,15 @@
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
+
                                 <div class="modal-body">
-                                    <form>
+                                    <form class="form-price">
+                                        <div class="flash-message-price text-left  alert alert-success" role="alert">
+                                            @if (Session::has("success"))
+                                                {{ Session::get("success") }}
+                                            @endif
+                                        </div>
+
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="form-group">
@@ -199,7 +206,6 @@
         </ul>
     </div>
 </nav>
-<body>
 <div class="fire_top ">
     <div class="container-fluid">
         <div class="row">
@@ -330,7 +336,6 @@
 <script src="{{asset('assets/js/bootstrap.js')}}"></script>
 <script src="{{asset('assets/js/script.js')}}"></script>
 @yield('scripts')
-
 </body>
 </html>
 

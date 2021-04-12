@@ -7,6 +7,6 @@ class CountriesController extends Controller
 {
 
     public function countries(){
-        return view('front\home',compact('countries'));
+        return view('home',compact('countries'));
     }
 }

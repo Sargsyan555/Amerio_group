@@ -5,6 +5,7 @@ use App\Mail\SendMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Validator;
+use Session;
 
 class MailController extends Controller
 {
@@ -29,9 +30,11 @@ class MailController extends Controller
                 'country'=>$request->country,
                 'message'=>$request->message,
             ];
-            Mail::to("sedraksargsyan2020@gmail.com")->send(new SendMail($data));
 
+            Mail::to(env('MAIL_TO'))->send(new SendMail($data));
+            session()->flash('success', 'Your data is sent');
         }
+
         return response()->json(['error'=>$validator->errors()]);
 
     }
@@ -56,8 +59,8 @@ class MailController extends Controller
                 'country'=>$request->country,
                 'message'=>$request->message,
             ];
-            Mail::to("sedraksargsyan2020@gmail.com")->send(new SendMail($data));
-
+            Mail::to(env('MAIL_TO'))->send(new SendMail($data));
+            session()->flash('success', 'Your data is sent');
         }
         return response()->json(['error'=>$validator->errors()]);
 
@@ -81,10 +84,10 @@ class MailController extends Controller
                 'country_contact'=>$request->country_contact,
                 'contact_message'=>$request->contact_message,
             ];
-            Mail::to("sedraksargsyan2020@gmail.com")->send(new SendMail($data));
-
+            Mail::to(env('MAIL_TO'))->send(new SendMail($data));
+            session()->flash('success', 'Your data is sent');
         }
-        return response()->json(['error'=>$validator->errors()]);
+        return response()->json(['error'=>$validator->errors()],);
 
     }
 }

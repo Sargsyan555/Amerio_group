@@ -493,6 +493,9 @@ a, button, input { outline: medium none !important; color: #2575fc; }
     right: calc((100% - 100px) / 2);
 
 }
+.product_1,.product_2, .product_3,.product_4, .product_5, .product_6{
+    display: none;
+}
 .product_description{
     margin-top: 49px;
 }
@@ -553,6 +556,7 @@ a, button, input { outline: medium none !important; color: #2575fc; }
 .product table {
     text-align: center;
     max-width: 750px;
+    margin-bottom: 30px;
 }
 .product table thead tr td{
     height: 50px;

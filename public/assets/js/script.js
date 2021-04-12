@@ -9,7 +9,6 @@ $(document).ready(function() {
     window.onscroll = function () {
         myFunction()
     };
-
     var navbar = document.getElementById("navbar");
     var sticky = navbar.offsetTop;
 
@@ -58,20 +57,19 @@ $(document).ready(function() {
         }, 400);
         return false;
     });
-
-    $('.product_description').height($('.simple-gallery').outerHeight());
-    $('.product_description-sm').height($('.simple-gallery-sm').outerHeight());
-
-
-    $('.product_1').hide();
-    $('.product_2').hide();
-    $('.product_3').hide();
-    $('.product_4').hide();
-    $('.product_5').hide();
-    $('.product_6').hide();
+    /*Ask for price list modal in product*/
+    $('.ask_product').click(function (){
+        var message = $(this).parent().parent().children('h2').text()
+        $('#text_area_message_price').val(message)
+        $('.modal').modal();
+    })
+    /*products and description*/
     $('.product_toggle1').click(function (){
-
+        $('.product_1').css('display', 'block');
+        $('.product_description').css('height', $(this).parent().children().children('.simple-gallery').height());
+        $('.product_description-sm').css('height', $(this).parent().children().children('.simple-gallery-sm').height());
         $('.product_1').show('slow');
+
         $('.product_2').hide();
         $('.product_3').hide();
         $('.product_4').hide();
@@ -86,7 +84,11 @@ $(document).ready(function() {
         $(this).toggleClass('active_zoe');
     });
     $('.product_toggle2').click(function (){
+        $('.product_2').css('display', 'block');
+        $('.product_description').css('height', $(this).parent().children().children('.simple-gallery').height());
+        $('.product_description-sm').css('height', $(this).parent().children().children('.simple-gallery-sm').height());
         $('.product_2').show('slow');
+
         $('.product_1').hide();
         $('.product_3').hide();
         $('.product_4').hide();
@@ -95,6 +97,9 @@ $(document).ready(function() {
 
     })
     $('.product_toggle3').click(function (){
+        $('.product_3').css('display', 'block');
+        $('.product_description').css('height', $(this).parent().children().children('.simple-gallery').height());
+        $('.product_description-sm').css('height', $(this).parent().children().children('.simple-gallery-sm').height());
         $('.product_3').show('slow');
         $('.product_2').hide();
         $('.product_1').hide();
@@ -104,6 +109,9 @@ $(document).ready(function() {
 
     })
     $('.product_toggle4').click(function (){
+        $('.product_4').css('display', 'block');
+        $('.product_description').css('height', $(this).parent().children().children('.simple-gallery').height());
+        $('.product_description-sm').css('height', $(this).parent().children().children('.simple-gallery-sm').height());
         $('.product_4').show('slow');
         $('.product_2').hide();
         $('.product_1').hide();
@@ -113,6 +121,9 @@ $(document).ready(function() {
 
     })
     $('.product_toggle5').click(function (){
+        $('.product_5').css('display', 'block');
+        $('.product_description').css('height', $(this).parent().children().children('.simple-gallery').height());
+        $('.product_description-sm').css('height', $(this).parent().children().children('.simple-gallery-sm').height());
         $('.product_5').show('slow');
         $('.product_2').hide();
         $('.product_1').hide();
@@ -122,6 +133,9 @@ $(document).ready(function() {
 
     })
     $('.product_toggle6').click(function (){
+        $('.product_6').css('display', 'block');
+        $('.product_description').css('height', $(this).parent().children().children('.simple-gallery').height());
+        $('.product_description-sm').css('height', $(this).parent().children().children('.simple-gallery-sm').height());
         $('.product_6').show('slow');
         $('.product_2').hide();
         $('.product_1').hide();
@@ -193,7 +207,13 @@ $(document).ready(function() {
     $('div.standard').mouseout(function() {
         unmountZoomImage();
     });
+    $('.flash-message-price').hide();
+    $('.flash-message-contact').hide();
+    $('.flash-message-partner').hide();
+
     $("#save_price").click(function (e){
+        $('.flash-message-price').hide();
+
         e.preventDefault();
         $(".error-text").empty();
         var email = $("#email_price").val();
@@ -215,9 +235,10 @@ $(document).ready(function() {
             method: "POST",
             success:function (res){
                 if ($.isEmptyObject(res.error)) {
-                    $('.modal').hide();
-                    $('.modal-backdrop').hide();
-
+                    $('.flash-message-price').show();
+                    $('.flash-message-price').empty();
+                    $(".form-price")[0].reset();
+                    $('.flash-message-price').append('Your data is sent')
                 } else {
                     printErrorMsg(res.error);
                 }
@@ -226,6 +247,7 @@ $(document).ready(function() {
     })
     $('#send_contact').click(function (e){
         e.preventDefault();
+        $('.flash-message-contact').hide();
         $(".error-text").empty();
         var first_name = $('#first_name').val();
         var last_name =$('#last_name').val();
@@ -246,7 +268,11 @@ $(document).ready(function() {
             method: "POST",
             success:function (res){
                 if ($.isEmptyObject(res.error)){
-                   }else {
+                    $('.flash-message-contact').show();
+                    $('.flash-message-contact').empty();
+                    $(".contact")[0].reset();
+                    $('.flash-message-contact').append('Your data is sent')
+                }else {
                     printErrorMsg(res.error)
                 }
             }
@@ -275,7 +301,10 @@ $(document).ready(function() {
             method: "POST",
             success:function (res){
                 if ($.isEmptyObject(res.error)){
-
+                    $('.flash-message-partner').show();
+                    $('.flash-message-partner').empty();
+                    $(".partners")[0].reset();
+                    $('.flash-message-partner').append('Your data is sent')
                 }else {
                     printErrorMsg(res.error)
                 }

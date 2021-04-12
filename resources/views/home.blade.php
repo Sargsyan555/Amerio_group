@@ -15,7 +15,8 @@
                 <div class="section_header py-md-3">
                     <h3>About Us</h3>
                 </div>
-                <p> We are specializing on out-put of Ceramic fire-proof Crucibles Offering product which manufacture is carried out on its own Exclusive technology. Our product provides high-quality and safe molding; exactly this fact is valued and acknowledged by Our Partners. AG Group Has been specialized on out-put of High Quality Ceramic fire-proof products since 2000Our Product started to be in great Demand in Dubai and Russia in a very short time .In 2001 the specialists of Our Company developed a new technology which was named "SPECIAL CERAMIC”. Since 2003 it has started serial output under this name. Our Company uses only clean oxides in out- put off its product , making it possible to get high quality products , High quality and low prices mark out our Product in the market. Since 2014 we have started to open new markets for Our product in Europe , the majority of firms engaged in jewelry business actively using Our Product , Well-Known companies such as shop of specialized jewelry equipments "Onix " , Jewelry factory"Navur-J " Dental Centre " Eurodent", a shop of specialized jewelry equipments "Sapphire " , PAT Granit , Arex-Pol , Misara , Advantage , Rodent , Santimas etc. Are among our partners.</p>
+                <p> We are specializing on out-p
+                    ut of Ceramic fire-proof Crucibles Offering product which manufacture is carried out on its own Exclusive technology. Our product provides high-quality and safe molding; exactly this fact is valued and acknowledged by Our Partners. AG Group Has been specialized on out-put of High Quality Ceramic fire-proof products since 2000 Our Product started to be in great Demand in Dubai and Russia in a very short time .In 2001 the specialists of Our Company developed a new technology which was named "SPECIAL CERAMIC”. Since 2003 it has started serial output under this name. Our Company uses only clean oxides in out- put off its product , making it possible to get high quality products , High quality and low prices mark out our Product in the market. Since 2014 we have started to open new markets for Our product in Europe , the majority of firms engaged in jewelry business actively using Our Product , Well-Known companies such as shop of specialized jewelry equipments "Onix " , Jewelry factory"Navur-J " Dental Centre " Eurodent", a shop of specialized jewelry equipments "Sapphire " , PAT, Granit , Arex-Pol , Misara , Advantage , Rodent , Santimas etc. Are among our partners.</p>
             </div>
         </div>
     </div>
@@ -53,7 +54,7 @@
                             </figure>
                         </div>
                         <div class="product_description product_1">
-                            <div class="simple-gallery p-5 col-12">
+                            <div class="simple-gallery py-3 col-12">
                                 <div class="description col-12 text-right align-content-center">
                                     <a  class="btn close_product_desc"><i class="fas fa-times"></i></a>
                                 </div>
@@ -212,6 +213,11 @@
                                             <div class="p-3">
                                                 <img  class="img-fluid" alt="products image" src="{{asset('assets/images/products/2_1.webp')}}">
                                             </div>
+                                             <div class="p-3">
+                                                <img  class="img-fluid" alt="products image" src="{{asset('assets/images/products/6_5.webp')}}">
+                                            </div>
+
+
                                         </div>
                                     </div>
                                     <div class="description col-lg-6 col-md-6 col-12 ">
@@ -230,8 +236,8 @@
                                             <p class="text-left p-3 my-3">
                                                 Graphite containing crucibles are for fusing of
                                                 precious metals and their fusions with fusion
-                                                Temperature up to 2000 °C
-                                                Perfectly resist to the fire changes of Thermo.
+                                                temperature up to 2000 °C
+                                                perfectly resist to the fire changes of thermo.
                                             </p>
                                         </div>
                                     </div>
@@ -460,12 +466,7 @@
                                         </div>
                                         <p class="text-left pt-2"><span> Product code:</span> 136-140</p>
                                         <p class="text-left pb-4" >Manufactured and carried out on its own Exclusive technology.</p>
-                                        <div class="desc_text">
-                                            <p class="text-left p-3 my-3">
-
-                                            </p>
                                         </div>
-                                    </div>
                                 </div>
                                 {{--table--}}
                                 <div class="col-lg-12 d-flex justify-content-center">
@@ -493,6 +494,12 @@
                                             <td class="text-center">138</td>
                                             <td class="text-left pl-3">Ceramic board for soldering</td>
                                             <td class="text-center">140</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">138В</td>
+                                            <td class="text-left pl-3">Ceramic board for soldering</td>
+                                            <td class="text-center">150</td>
                                         </tr>
                                         <tr>
                                             <td class="text-center">139</td>
@@ -555,12 +562,7 @@
                                         </div>
                                         <p class="text-left pt-2"><span> Product code:</span> 141</p>
                                         <p class="text-left pb-4" >Manufactured and carried out on its own Exclusive technology.</p>
-                                        <div class="desc_text">
-                                            <p class="text-left p-3 my-3">
-
-                                            </p>
                                         </div>
-                                    </div>
                                 </div>
 
                                 {{--table--}}
@@ -576,7 +578,7 @@
                                         <tbody >
                                         <tr>
                                             <td class="text-center">141</td>
-                                            <td class="text-left pl-3">Handle for crucibles with regulate silder (320mm)</td>
+                                            <td class="text-left pl-3">Holder for crucibles with regulate silder (320mm)</td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -869,6 +871,10 @@
                                             <div class="p-3">
                                                 <img  class="img-fluid" alt="products image" src="{{asset('assets/images/products/2_1.webp')}}">
                                             </div>
+                                             <div class="p-3">
+                                                <img  class="img-fluid" alt="products image" src="{{asset('assets/images/products/6_5.webp')}}">
+                                            </div>
+
                                         </div>
                                     </div>
                                     <div class="description  col-lg-6 col-md-6 col-12 ">
@@ -888,8 +894,8 @@
                                             <p class="text-left p-3 my-3">
                                                 Graphite containing crucibles are for fusing of
                                                 precious metals and their fusions with fusion
-                                                Temperature up to 2000 °C
-                                                Perfectly resist to the fire changes of Thermo.
+                                                temperature up to 2000 °C
+                                                perfectly resist to the fire changes of thermo.
                                             </p>
                                         </div>
                                     </div>
@@ -1118,12 +1124,7 @@
                                         </div>
                                         <p class="text-left pt-2"><span> Product code:</span> 136-140</p>
                                         <p class="text-left pb-4" >Manufactured and carried out on its own Exclusive technology.</p>
-                                        <div class="desc_text">
-                                            <p class="text-left p-3 my-3">
-
-                                            </p>
                                         </div>
-                                    </div>
                                 </div>
                                 {{--table--}}
                                 <div class="col-lg-12 m-auto d-flex justify-content-center  ">
@@ -1151,6 +1152,12 @@
                                             <td class="text-center">138</td>
                                             <td class="text-left pl-3">Ceramic board for soldering</td>
                                             <td class="text-center">140</td>
+                                        </tr>
+
+                                        <tr>
+                                            <td class="text-center">138В</td>
+                                            <td class="text-left pl-3">Ceramic board for soldering</td>
+                                            <td class="text-center">150</td>
                                         </tr>
                                         <tr>
                                             <td class="text-center">139</td>
@@ -1213,12 +1220,7 @@
                                         </div>
                                         <p class="text-left pt-2"><span> Product code:</span> 141</p>
                                         <p class="text-left pb-4" >Manufactured and carried out on its own Exclusive technology.</p>
-                                        <div class="desc_text">
-                                            <p class="text-left p-3 my-3">
-
-                                            </p>
                                         </div>
-                                    </div>
                                 </div>
                                 {{--table--}}
                                 <div class="col-lg-12 m-auto d-flex justify-content-center  ">
@@ -1233,7 +1235,7 @@
                                         <tbody >
                                         <tr>
                                             <td class="text-center">141</td>
-                                            <td class="text-left pl-3">Handle for crucibles with regulate silder (320mm)</td>
+                                            <td class="text-left pl-3">Holder for crucibles with regulate silder (320mm)</td>
                                         </tr>
                                         </tbody>
                                     </table>
@@ -1384,6 +1386,12 @@
             <div class="col-lg-8 col-12">
 
                 <form class="partners">
+                    <div class="flash-message-partner  alert alert-success" role="alert">
+                        @if (Session::has("success"))
+                            {{ Session::get("success") }}
+                        @endif
+                    </div>
+
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-group">
@@ -1495,8 +1503,15 @@
         <div class="row justify-content-center">
             <div class="col-lg-8">
 
-                <form >
+                <form class="contact">
                     <div class="row">
+                        <div class="col-md-12">
+                            <div class="flash-message-contact  alert alert-success" role="alert">
+                                @if (Session::has("success"))
+                                    {{ Session::get("success") }}
+                                @endif
+                            </div>
+                        </div>
                         <div class="col-md-6">
                             <div class="form-group">
                                 <input type="text" class="form-control " id="first_name" placeholder="First Name" name="First name" required>
